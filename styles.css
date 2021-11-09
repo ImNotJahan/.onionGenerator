@@ -1,0 +1,23 @@
+body
+{
+    background-color: #282828;
+    color: white;
+
+    font-family: consolas, courier, monospace;
+	
+	width: 200px;
+	height: 300px
+}
+
+a
+{
+    color: #f39c12;
+}
+
+input, select, textarea, button
+{
+  background-color: #141414;
+  color: #eeeeee;
+  font-family: Consolas, courier, monospace;
+  width: 75px;
+}
