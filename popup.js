@@ -6,7 +6,7 @@ generateButton.addEventListener("click", async () =>
     chrome.runtime.sendMessage(
     { run: true, data:
         {
-            search: lookFor.value,
+            search: lookFor.value
         }
     });
 });
