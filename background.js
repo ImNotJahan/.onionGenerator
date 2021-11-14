@@ -1,6 +1,7 @@
 chrome.runtime.onMessage.addListener(function(message, sender)
 {
     if(!message.run) return;
+    if(!message.data.popup) return;
 
     if(message.data.search !== "")
     {
@@ -16,8 +17,17 @@ function tryToFindString(string)
 
         if(!result.hash.includes(string))
         {
-            console.log(string);
             tryToFindString(string);
+        } else
+        {
+            chrome.runtime.sendMessage(
+            { run: true, data:
+                    {
+                        popup: false,
+                        result: result.hash,
+                        key: result.key
+                    }
+            });
         }
     }, function (err)
     {
